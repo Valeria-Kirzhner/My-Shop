@@ -44,8 +44,7 @@
 
     </main>
     <footer>
-        <hr>
-        <div class="container">
+         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <p class="text-center">My-Shop &copy; {{date('Y')}}</p>
