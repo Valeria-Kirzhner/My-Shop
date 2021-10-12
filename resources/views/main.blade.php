@@ -34,6 +34,11 @@
 </nav>
     </header>
     <main>
+      <br><br><br><br><br>
+      <div class="container">
+        @yield('home') 
+      </div>
+      <br><br><br><br><br>
 
     </main>
     <br>
