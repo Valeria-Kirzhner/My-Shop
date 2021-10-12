@@ -20,6 +20,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('/about') }}">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('/shop') }}">Shop</a>
+        </li>
 
     </ul>
     <ul class="navbar-nav navbar-right">
