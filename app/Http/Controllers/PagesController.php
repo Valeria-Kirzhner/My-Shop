@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 class PagesController extends MainController
 {
     static public function home(){
-       return view('home');
+        self::$data['title'] .= 'Home Page'; 
+       return view('home', self::$data); 
     }
     static public function about(){
-         return view('about');
+        self::$data['title'] .= 'About Page'; 
+         return view('about', self::$data);
      }
     
 }
