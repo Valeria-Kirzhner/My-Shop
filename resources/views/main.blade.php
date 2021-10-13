@@ -37,12 +37,12 @@
 </nav>
     </header>
     <main>
-      <br><br><br><br><br>
+      <br>
       <div class="container">
         @yield('home') 
         @yield('about') 
       </div>
-      <br><br><br><br><br>
+      <br>
 
     </main>
     <br>
