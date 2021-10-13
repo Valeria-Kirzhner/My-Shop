@@ -12,10 +12,10 @@
         <h3>
             {{$category['title']}}
         </h3>
-        
+         
         <p><img src="{{ asset('images/' . $category['image'] )}}" width="200" height="225"></p>
         </a>
-        <p>{{$category['article']}}</p>
+        <p>{!!$category['article']!!}</p>
 
     </div>
         
