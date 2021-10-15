@@ -22,6 +22,8 @@ class ShopController extends MainController
     public function item ($cat_url, $prd_url) {
         if($product = Product::where('url', '=', $prd_url)->first()){
             $product = $product->toArray();
+            self::$data['title'] .= $product['title'];
+            self::$data['product'] = $product;
             return view('content.item', self::$data);
         } else {
             abort(404);
