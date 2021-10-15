@@ -13,7 +13,7 @@ class Product extends Model
         if( $category = Categorie::where('url', '=',$cat_url)->first() ){
 
             $category = $category->toArray();
-            $data['title'] .= $category['title'] . 'products';
+            $data['title'] .= $category['title'] . ' products';
 
             if( $products =  Categorie::find($category['id'])->products ){
 
