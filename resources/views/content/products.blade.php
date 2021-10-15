@@ -9,7 +9,7 @@
 <div class="row">
 @foreach ($products as $product)
 <div class="col-md-6">
-    <a href="#" style="text-decoration: none; color:black">
+    <a href="{{ url('shop/' . $cat_url . '/' . $product['url'])}}" style="text-decoration: none; color:black">
     <h3>{{$product['title']}}</h3>
     <p><img width="300" height="400" src="{{asset('images/' . $product['image'])}}" alt=""></p>
     </a>

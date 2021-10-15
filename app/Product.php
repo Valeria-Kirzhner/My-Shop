@@ -14,7 +14,8 @@ class Product extends Model
 
             $category = $category->toArray();
             $data['title'] .= $category['title'] . ' products';
-
+            $data['cat_url'] = $cat_url;
+            
             if( $products =  Categorie::find($category['id'])->products ){
 
                 $data['products'] = $products->toArray();
