@@ -19,4 +19,12 @@ class ShopController extends MainController
         Product::getProduct($cat_url, self::$data);
         return view('content.products', self::$data);
     }
+    public function item ($cat_url, $prd_url) {
+        if($product = Product::where('url', '=', $prd_url)->first()){
+            $product = $product->toArray();
+            return view('content.item', self::$data);
+        } else {
+            abort(404);
+        }
+    }
 }

@@ -12,6 +12,7 @@ Route::get('/about', [PagesController::class, 'about']);
 Route::prefix('shop')->group(function() {
     Route::get('/', [ShopController::class, 'categories']);
     Route::get('{cat_url}', [ShopController::class, 'products']);
+    Route::get('{cat_url}/{prd_url}', [ShopController::class, 'item']);
 });
 
 
