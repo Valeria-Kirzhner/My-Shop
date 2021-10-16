@@ -8,7 +8,7 @@
         <p><b>{{$product['price']}} $</b></p>
         <p>
         <input class="btn btn-success" type="button" value="+ Add to cart">
-        <a class="btn btn-primary" href="#">Checkout</a>
+        <a class="btn btn-primary" href="{{url('shop/checkout')}}">Checkout</a>
     </p>
     </div>
 </div>
