@@ -1,0 +1,6 @@
+div .total-cart {
+    display: inline;
+    position: relative;
+    top: -5;
+    left: -3px;
+}

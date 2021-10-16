@@ -18,10 +18,16 @@
     </button>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/about') }}">About</a>
+          <a class="nav-link active" aria-current="page" href="{{url('about') }}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/shop') }}">Shop</a>
+          <a class="nav-link active" aria-current="page" href="{{url('shop') }}">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('shop/checkout') }}">
+            <img width="20" src="{{ asset('images/shopping-cart.png')}}" alt="">
+            <div class="total-cart">0</div>
+          </a>
         </li>
 
     </ul>
