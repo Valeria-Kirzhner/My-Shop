@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categorie;
 use App\Product;
+use Cart;
 
 
 
@@ -20,6 +21,7 @@ class ShopController extends MainController
         return view('content.products', self::$data);
     }
     public function item ($cat_url, $prd_url) {
+
         if($product = Product::where('url', '=', $prd_url)->first()){
             $product = $product->toArray();
             self::$data['title'] .= $product['title'];
