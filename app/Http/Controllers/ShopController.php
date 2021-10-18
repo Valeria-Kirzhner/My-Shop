@@ -31,4 +31,7 @@ class ShopController extends MainController
             abort(404);
         }
     }
+    public function addToCart(){
+        echo __METHOD__;
+    }
 }

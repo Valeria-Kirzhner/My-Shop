@@ -7,7 +7,7 @@
         <p>{!!$product['article']!!}</p>
         <p><b>{{$product['price']}} $</b></p>
         <p>
-        <input class="btn btn-success add-to-cart-btn" type="button" value="+ Add to cart">
+        <input data-id="{{$product['id']}}"  class="btn btn-success add-to-cart-btn" type="button" value="+ Add to cart">
         <a class="btn btn-primary" href="{{url('shop/checkout')}}">Checkout</a>
     </p>
     </div>
