@@ -31,7 +31,7 @@ class ShopController extends MainController
             abort(404);
         }
     }
-    public function addToCart(){
-        echo __METHOD__;
+    public function addToCart(Request $request){// dependency injection
+        echo $request['id'];
     }
 }
