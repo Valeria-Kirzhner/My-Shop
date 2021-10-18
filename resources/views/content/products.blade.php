@@ -16,7 +16,7 @@
     <p>{!!$product['article']!!}</p>
     <p><b>Price: </b>{{$product['price']}} $</p>
     <p>
-        <input class="btn btn-success" type="button" value="+ Add to cart">
+        <input class="btn btn-success add-to-cart-btn" type="button" value="+ Add to cart">
     </p>
 </div>
 @endforeach
