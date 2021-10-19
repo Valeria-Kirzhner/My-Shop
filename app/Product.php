@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cart; 
+use Cart, Session; 
 
 class Product extends Model
 {
@@ -36,6 +36,7 @@ class Product extends Model
 
                     $product = $product->toArray();
                     Cart::add($id, $product['title'], $product['price'], 1, array());// 1 = quantity, the array is extra info
+                    Session::flash('sm',  $product['title'] . ' added to cart !');// sm = success message.
                 }
             }
         }

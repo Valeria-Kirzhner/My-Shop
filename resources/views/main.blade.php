@@ -49,11 +49,17 @@
     <main>
       <br>
       <div class="container">
+        @if(Session::has('sm'))
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-success">{{Session::get('sm')}}</div>
+          </div>
+        </div>
+        @endIf
         @yield('home') 
         @yield('about') 
       </div>
       <br>
-
     </main>
     <br>
     <hr>
