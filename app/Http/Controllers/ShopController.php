@@ -12,7 +12,7 @@ use Cart;
 class ShopController extends MainController
 {
     public function categories (){
-        self::$data['categories'] = Categorie::all()->toArray();
+         self::$data['categories'] = Categorie::all()->toArray();
         self::$data['title'] .= 'Shop Categories';
         return view('content.categories', self::$data);
     }
@@ -33,5 +33,13 @@ class ShopController extends MainController
     }
     public function addToCart(Request $request){// dependency injection
         Product::addToCart($request['id']);
+    }
+
+    public function checkout () {
+        $cartCollection = Cart::getContent();
+        $cart = $cartCollection->toArray();
+        self::$data['cart'] = $cart;
+        self::$data['title'] .= 'checkout page';
+        return view('content.checkout', self::$data);
     }
 }
