@@ -1,4 +1,4 @@
-$("div.sm-box").delay(3000).slideup();
+$("div.sm-box").delay(3000).slideUp();
 
 $(".add-to-cart-btn").click(function () {
     $.ajax({
@@ -9,5 +9,15 @@ $(".add-to-cart-btn").click(function () {
         success: function (response) {
             location.reload();
         },
+    });
+});
+
+$(".update-cart").click(function () {
+    $.ajax({
+        url: BASE_URL + "/shop/update-cart ", // base url given in the head og main page
+        type: "GET",
+        dataType: "html",
+        data: { id: $(this).data("id"), operation: $(this).val() },
+        success: function (response) {},
     });
 });
