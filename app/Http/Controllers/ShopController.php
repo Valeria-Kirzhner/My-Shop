@@ -38,6 +38,7 @@ class ShopController extends MainController
     public function checkout () {
         $cartCollection = Cart::getContent();
         $cart = $cartCollection->toArray();
+        sort($cart); // will sort by id instead by qty
         self::$data['cart'] = $cart;
         self::$data['title'] .= 'checkout page';
         return view('content.checkout', self::$data);
