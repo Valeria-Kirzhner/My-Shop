@@ -50,7 +50,7 @@
       <br>
       <div class="container">
         @if(Session::has('sm'))
-        <div class="row">
+        <div class="row sm-box">
           <div class="col-md-12">
             <div class="alert alert-success">{{Session::get('sm')}}</div>
           </div>

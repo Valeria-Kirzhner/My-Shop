@@ -12,7 +12,6 @@ use Cart;
 class ShopController extends MainController
 {
     public function categories (){
-         Cart::clear();
         self::$data['categories'] = Categorie::all()->toArray();
         self::$data['title'] .= 'Shop Categories';
         return view('content.categories', self::$data);
