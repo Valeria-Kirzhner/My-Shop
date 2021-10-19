@@ -4,6 +4,8 @@ $(".add-to-cart-btn").click(function () {
         type: "GET",
         dataType: "html",
         data: { id: $(this).data("id") },
-        success: function (response) {},
+        success: function (response) {
+            location.reload();
+        },
     });
 });
