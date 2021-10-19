@@ -16,7 +16,11 @@
     <p>{!!$product['article']!!}</p>
     <p><b>Price: </b>{{$product['price']}} $</p>
     <p>
+        @if( ! Cart::get($product['id']))
         <input data-id="{{$product['id']}}" class="btn btn-success add-to-cart-btn" type="button" value="+ Add to cart">
+        @else
+        <input class="btn btn-success add-to-cart-btn" disabled="disabled" type="button" value="Item in cart">
+        @endIf
     </p>
 </div>
 @endforeach

@@ -28,12 +28,15 @@ class Product extends Model
     }
     static public function addToCart ($id){
 
-        if( ! empty($id) && is_numeric($id) ){
+        if( ! empty($id) && is_numeric($id) ){ //if its not a hacker
 
-            if( $product = self::find($id)){// Product class recieve find method from Model.
+            if( ! Cart::get($id)){// if these product isn't in the cart yet
 
-                $product = $product->toArray();
-                Cart::add($id, $product['title'], $product['price'], 1, array());// 1 = quantity, the array is extra info
+                if( $product = self::find($id)){// Product class recieve find method from Model.
+
+                    $product = $product->toArray();
+                    Cart::add($id, $product['title'], $product['price'], 1, array());// 1 = quantity, the array is extra info
+                }
             }
         }
     }
