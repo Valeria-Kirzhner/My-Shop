@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cart; 
 
 class Product extends Model
 {
@@ -23,6 +24,17 @@ class Product extends Model
             }  
         } else { // if there is no category
             abort(404);
+        }
+    }
+    static public function addToCart ($id){
+
+        if( ! empty($id) && is_numeric($id) ){
+
+            if( $product = self::find($id)){// Product class recieve find method from Model.
+
+                $product = $product->toArray();
+                Cart::add($id, $product['title'], $product['price'], 1, array());// 1 = quantity, the array is extra info
+            }
         }
     }
 }

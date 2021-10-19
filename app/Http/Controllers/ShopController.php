@@ -32,6 +32,6 @@ class ShopController extends MainController
         }
     }
     public function addToCart(Request $request){// dependency injection
-        echo $request['id'];
+        Product::addToCart($request['id']);
     }
 }
