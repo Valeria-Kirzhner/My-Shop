@@ -14,10 +14,12 @@ $(".add-to-cart-btn").click(function () {
 
 $(".update-cart").click(function () {
     $.ajax({
-        url: BASE_URL + "/shop/update-cart ", // base url given in the head og main page
+        url: BASE_URL + "/shop/update-cart", // base url given in the head og main page
         type: "GET",
         dataType: "html",
         data: { id: $(this).data("id"), operation: $(this).val() },
-        success: function (response) {},
+        success: function (response) {
+            location.reload(); // to see the cart updating immidiately
+        },
     });
 });

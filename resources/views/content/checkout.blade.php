@@ -23,9 +23,9 @@
                         <tr>
                             <td>{{$item['name']}}</td>
                             <td>
-                                <input data-id="{{$item['id ']}}" type="button" value="-" class="update-cart">
+                                <input data-id="{{$item['id']}}" type="button" value="-" class="update-cart">
                                 <input class="text-center" type="text" size="1" id="" value="{{$item['quantity']}}">
-                                <input data-id="{{$item['id ']}}" type="button" value="+" class="update-cart">
+                                <input data-id="{{$item['id']}}" type="button" value="+" class="update-cart">
                             </td>
                             <td>{{$item['price']}} $ </td>
                             <td>{{$item['quantity'] * $item['price']}} $</td>

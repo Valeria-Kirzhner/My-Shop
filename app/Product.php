@@ -41,4 +41,33 @@ class Product extends Model
             }
         }
     }
+    static function updateCart($request){ // ajax - supposet to recieve two properties - > id + operation
+
+        if(! empty($request['id']) && is_numeric($request['id'])){
+
+            if( ! empty($request['operation'])){
+
+                $item = Cart::get($request['id']);// this is recheck for sequre reason.
+
+                if( $item ){ // only if item truthy
+
+                    if( $request['operation'] == '+'){
+
+                        Cart::update($request['id'], ['quantity' => 1]);
+                         
+                    } elseif( $request['operation'] == '-') {
+
+                        $item = $item->toArray();
+                        
+                        if( $item['quantity'] -1 != 0 ){
+
+                           Cart::update($request['id'], ['quantity' => -1]);
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }

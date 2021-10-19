@@ -31,7 +31,7 @@ class ShopController extends MainController
             abort(404);
         }
     }
-    public function addToCart(Request $request){// dependency injection
+    public function addToCart(Request $request){// dependency injection becouse these is ajax request
         Product::addToCart($request['id']);
     }
 
@@ -45,6 +45,9 @@ class ShopController extends MainController
     public function clearCart () {
         Cart::clear();
         return redirect('shop/checkout');
+    }
+    public function updateCart (Request $request) {// dependency injection becouse these is ajax request
+        Product::updateCart($request);
     }
 
 }
