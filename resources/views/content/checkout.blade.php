@@ -38,7 +38,11 @@
                     @endforeach
                 </tbody>
             </table>
-            <p><b>Total in cart: </b> {{ Cart::getTotal()}} $</p>
+            <p><b>Total in cart: </b> {{ Cart::getTotal()}} $
+                <div class="float-end">
+                    <a class="btn btn-secondary" href="{{ url('shop/clear-cart')}}">Clear cart</a>
+                </div>
+            </p>
         @else
         <p><i> No Items in the cart.</i></p>
         @endIf

@@ -42,4 +42,9 @@ class ShopController extends MainController
         self::$data['title'] .= 'checkout page';
         return view('content.checkout', self::$data);
     }
+    public function clearCart () {
+        Cart::clear();
+        return redirect('shop/checkout');
+    }
+
 }
