@@ -12,11 +12,13 @@
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input name="email" value="{{ old('email')}}" type="text" class="form-control" id="email" aria-describedby="email" placeholder="alex@gmail.com">
-              </div>
+              <span class="text-danger">{{$errors->first('email')}}</span>
+            </div>
               <div class="mb-3">
                 <label for="password" class="form-label">password</label>
                 <input name="password" type="text" class="form-control" placeholder="password" id="password" aria-describedby="email">
-              </div>
+                <span class="text-danger"> {{$errors->first('password')}}</span>
+            </div>
               <input class="btn btn-primary " type="submit" name="submit" value="Sign In" id="">
         </form>
     </div>
