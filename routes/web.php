@@ -27,7 +27,7 @@ Route::prefix('user')->group(function() {
 
     Route::get('signin', [UserController::class, 'getSignin']); 
     Route::post('signin', [UserController::class, 'postSignin']);
-    Route::get('signup', [UserController::class, 'postSignup']); 
+    Route::get('signup', [UserController::class, 'getSignup']); 
     Route::post('signup', [UserController::class, 'postSignup']);  
     Route::get('logout', [UserController::class, 'logout']); 
 

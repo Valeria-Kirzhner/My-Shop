@@ -22,6 +22,17 @@ class UserController extends MainController
             return view('forms.signin', self::$data)->withErrors('Invalid Email/Password');
         }
     }
+
+    public function getSignup(){
+        self::$data['title'] .= 'sign up page';
+        return view('forms.signup',  self::$data);
+
+    }
+    public function postSignup(){
+
+
+    }
+
     public function logout () {
         Session::flush();
         return redirect('user/signin');
