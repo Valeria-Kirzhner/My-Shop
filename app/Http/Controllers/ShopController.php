@@ -50,5 +50,10 @@ class ShopController extends MainController
     public function updateCart (Request $request) {// dependency injection becouse these is ajax request
         Product::updateCart($request);
     }
+    public function removeItem($id){
+        Cart::remove($id);
+        return redirect('shop/checkout');
+
+    }
 
 }
