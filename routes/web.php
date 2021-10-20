@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\PagesController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
+
 
 # Pages
 Route::get('/', [PagesController::class, 'home']);
@@ -18,6 +20,14 @@ Route::prefix('shop')->group(function() {
     Route::get('/checkout', [ShopController::class, 'checkout']);
     Route::get('{cat_url}', [ShopController::class, 'products']);
     Route::get('{cat_url}/{prd_url}', [ShopController::class, 'item']);
+});
+
+# User
+Route::prefix('user')->group(function() {
+
+    Route::get('signin', [UserController::class, 'getSignin']); 
+    Route::post('signin', [UserController::class, 'postSignin']); 
+
 });
 
 
