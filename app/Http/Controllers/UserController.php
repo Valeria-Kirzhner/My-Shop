@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request; 
 use App\Http\Requests\SigninRequest;
 use App\User;
+use Session;
 
 class UserController extends MainController
 {
@@ -20,6 +21,10 @@ class UserController extends MainController
             self::$data['title'] .= 'sign in page';
             return view('forms.signin', self::$data)->withErrors('Invalid Email/Password');
         }
+    }
+    public function logout () {
+        Session::flush();
+        return redirect('user/signin');
     }
 
 
