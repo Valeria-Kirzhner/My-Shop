@@ -35,12 +35,26 @@
               </li>
           </ul>
           <ul class="navbar-nav navbar-right">
+              @if( ! Session::has('user_id'))
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('user/signin') }}">Sign In</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('user/signup') }}">Sign Up</a>
               </li> 
+              @else
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('user/profile') }}">{{Session::get('user_name')}}</a>
+              </li>
+              @if(Session::has('is_admin'))
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('cms/dashboard') }}">CMS dashboard</a>
+              </li>
+              @endif
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('user/logout') }}">Logout</a>
+              </li>
+              @endif
           </ul>
           </div>
         </div>
