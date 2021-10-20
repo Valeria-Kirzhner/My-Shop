@@ -23,9 +23,9 @@
             </div>
             <div class="mb-3">
                 <label for="password-confirmation" class="form-label">Confirm Password</label>
-                <input name="password-confirmation" type="text" class="form-control" placeholder="password" id="password-confirmation" aria-describedby="password-confirmation">
+                <input name="password_confirmation" type="text" class="form-control" placeholder="password" id="password-confirmation" aria-describedby="password-confirmation">
             </div>
-              <input class="btn btn-primary " type="submit" name="submit" value="Sign Un" id="">
+              <input class="btn btn-primary " type="submit" name="submit" value="Sign Up" id="">
         </form>
     </div>
 </div>

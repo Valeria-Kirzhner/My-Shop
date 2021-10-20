@@ -37,7 +37,7 @@ class User extends Model
         $user->password = bcrypt($request['password']);
         $user->save();
         $uid = $user->id;
-        DB::insert("INSERT INTO user roles VALUES ($uid, 7)");
+        DB::insert("INSERT INTO user_roles VALUES ($uid, 7)");
         // connect user 
         Session::put('user_id', $uid);
         Session::put('user_name', $request['name']);
