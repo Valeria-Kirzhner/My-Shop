@@ -10,6 +10,14 @@ use Session;
 
 class UserController extends MainController
 {
+
+    function __construct()
+    {
+        parent::__construct();// to not overwright parent constract
+        $this->middleware('signmid', ['except' => ['logout']]);// logout is name of a method not route
+
+    }
+
     public function getSignin(){
         self::$data['title'] .= 'sign in page';
         return view('forms.signin',  self::$data);
