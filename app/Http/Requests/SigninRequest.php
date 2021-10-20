@@ -28,4 +28,13 @@ class SigninRequest extends FormRequest
             'password' => 'required|min:6|max:10',
         ];
     }
+    /*public function messages()// laravel function
+    {
+        return [
+            'email.required' => 'שדה אימייל הוא שדה חובה',
+            'email.email' => 'שדה זה חייב להכיל אימייל',
+            
+        ];
+    }*/
+    
 }
