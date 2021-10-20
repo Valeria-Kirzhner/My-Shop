@@ -47,6 +47,9 @@
                     <a class="btn btn-secondary" href="{{ url('shop/clear-cart')}}">Clear cart</a>
                 </div>
             </p>
+            <p>
+                <a class="btn btn-primary" href="{{ url('shop/order')}}">ORDER NOW</a>
+            </p>
         @else
         <p><i> No Items in the cart.</i></p>
         @endIf
