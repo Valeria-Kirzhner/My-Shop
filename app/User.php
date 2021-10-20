@@ -38,6 +38,10 @@ class User extends Model
         $user->save();
         $uid = $user->id;
         DB::insert("INSERT INTO user roles VALUES ($uid, 7)");
+        // connect user 
+        Session::put('user_id', $uid);
+        Session::put('user_name', $request['name']);
+        Session::flash('sm', $request['name'] . ' your account created, you are now signed in!' );
 
 
     }
