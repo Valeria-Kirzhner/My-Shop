@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request; 
 use App\Http\Requests\SigninRequest;
+use App\Http\Requests\SignupRequest;
 use App\User;
 use Session;
 
@@ -24,12 +25,15 @@ class UserController extends MainController
     }
 
     public function getSignup(){
+
         self::$data['title'] .= 'sign up page';
         return view('forms.signup',  self::$data);
-
     }
-    public function postSignup(){
 
+    public function postSignup(SignupRequest $request){
+
+        User::save_new($request);
+        return redirect('');
 
     }
 
