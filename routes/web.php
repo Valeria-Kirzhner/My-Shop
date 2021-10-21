@@ -21,9 +21,12 @@ Route::prefix('shop')->group(function() {
 });
 
 # CMS
-Route::prefix('cms')->group(function() {
+Route::middleware(['cmsadmin'])->group(function() {
+    Route::prefix('cms')->group(function() {
+
     Route::get('dashboard', [CmsController::class, 'dashboard']); 
 
+    });
 });
 
 # User
