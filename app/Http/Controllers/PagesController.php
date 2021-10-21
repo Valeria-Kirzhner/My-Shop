@@ -10,9 +10,6 @@ class PagesController extends MainController
         self::$data['title'] .= 'Home Page'; 
        return view('content/home', self::$data); 
     }
-    static public function about(){
-        self::$data['title'] .= 'About Us'; 
-         return view('content/about', self::$data);
-     }
+
 
 }
