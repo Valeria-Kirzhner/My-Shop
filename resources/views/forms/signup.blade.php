@@ -1,5 +1,5 @@
 @extends('main')
-@section('about') 
+@section('home') 
 <div class="row">
     <div class="col-md-12">
         <h1>Here you can sign up for your account</h1>

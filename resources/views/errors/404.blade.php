@@ -2,7 +2,6 @@
 
 $title = 'MY SHOP | page 404';
 $menu = App\Menu::all()->toArray();
-$errors = [];
 ?>
 
 @extends('main')

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\PagesController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CmsController;
+
 
 # Shop
 Route::prefix('shop')->group(function() {
@@ -16,6 +18,12 @@ Route::prefix('shop')->group(function() {
     Route::get('/checkout', [ShopController::class, 'checkout']);
     Route::get('{cat_url}/{prd_url}', [ShopController::class, 'item']);
     Route::get('{cat_url}', [ShopController::class, 'products']);
+});
+
+# CMS
+Route::prefix('cms')->group(function() {
+    Route::get('dashboard', [CmsController::class, 'dashboard']); 
+
 });
 
 # User
