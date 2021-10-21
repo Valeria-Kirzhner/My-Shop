@@ -11,5 +11,9 @@ class PagesController extends MainController
        return view('content/home', self::$data); 
     }
 
+    static public function content($url){
+
+        echo $url;
+    }
 
 }

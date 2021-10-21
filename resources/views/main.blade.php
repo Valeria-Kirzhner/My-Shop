@@ -19,9 +19,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                
-              </li>
+                @foreach ($menu as $item)
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{url($item['url']) }}">{{$item['link']}}</a>
+                </li>
+                @endforeach
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('shop') }}">Shop</a>
               </li>

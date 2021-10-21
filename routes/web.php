@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 
 # Pages
 Route::get('/', [PagesController::class, 'home']);
+Route::get('{url}', [PagesController::class, 'content']);
 
 # Shop
 Route::prefix('shop')->group(function() {
