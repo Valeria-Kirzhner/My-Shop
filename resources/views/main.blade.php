@@ -87,7 +87,6 @@
               </div>
               @endif
         @yield('home') 
-        @yield('about') 
       </div>
       <br>
     </main>
