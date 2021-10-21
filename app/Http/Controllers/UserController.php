@@ -23,9 +23,12 @@ class UserController extends MainController
         return view('forms.signin',  self::$data);
     }
     public function postSignin(SigninRequest $request){// dependency injection -> the request must first get over validation
+        
+        $rt = !empty($request['rt']) ? $request['rt'] : '';
+
         if(User::validate($request)){// true or false
 
-            return redirect('');
+            return redirect($rt);// if rt is not null -> shop/checkout if its null -> redirect to ''
         } else {
             self::$data['title'] .= 'sign in page';
             return view('forms.signin', self::$data)->withErrors('Invalid Email/Password');

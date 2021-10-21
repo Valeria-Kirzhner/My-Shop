@@ -14,6 +14,7 @@ Route::get('/about', [PagesController::class, 'about']);
 Route::prefix('shop')->group(function() {
     Route::get('/', [ShopController::class, 'categories']);
     Route::get('/add-to-cart', [ShopController::class, 'addToCart']);
+    Route::get('/order', [ShopController::class, 'order']);
     Route::get('/clear-cart', [ShopController::class, 'clearCart']);
     Route::get('/update-cart', [ShopController::class, 'updateCart']);
     Route::get('/remove-item/{id}', [ShopController::class, 'removeItem']);
