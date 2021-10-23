@@ -105,6 +105,28 @@
       </nav>
   
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        @if(Session::has('sm'))
+        <div class="row sm-box">
+          <div class="col-md-12">
+            <div class="alert alert-success">{{Session::get('sm')}}</div>
+          </div>
+        </div>
+        @endIf
+            @if ($errors->any())
+              <div class="row">
+                <div class="col-md-12">
+                  <br>
+                  <div class="alert alert-danger">
+                    <ul>
+                      @foreach ($errors->all() as $error) 
+                        <li>{{$error}}</li>
+                      @endforeach
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              @endif
         @yield('cms_content')
       </main>
     </div>
