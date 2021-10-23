@@ -8,6 +8,6 @@ use DB;
 class CmsController extends MainController
 {
     public function dashboard () {
-        echo __METHOD__;
+        return view('cms.cms_main', self::$data);
     }
 }
