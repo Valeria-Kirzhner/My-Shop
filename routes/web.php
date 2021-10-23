@@ -5,7 +5,7 @@ use  App\Http\Controllers\PagesController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmsController;
-
+use App\Http\Controllers\MenuController;
 
 # Shop
 Route::prefix('shop')->group(function() {
@@ -23,8 +23,8 @@ Route::prefix('shop')->group(function() {
 # CMS
 Route::middleware(['cmsadmin'])->group(function() {
     Route::prefix('cms')->group(function() {
-
     Route::get('dashboard', [CmsController::class, 'dashboard']); 
+    Route::resource('menu', MenuController::class);
 
     });
 });
