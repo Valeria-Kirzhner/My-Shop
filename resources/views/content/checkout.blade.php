@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-12">
         @if( $cart)
-            <table class="table table-border">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                     <th>Product</th>
