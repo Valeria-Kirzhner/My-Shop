@@ -14,7 +14,7 @@ class MenuController extends MainController
 
     public function create()
     {
-        
+        return view('cms.add_menu', self::$data);
     }
 
     public function store(Request $request)
