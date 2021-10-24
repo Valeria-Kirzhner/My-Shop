@@ -62,7 +62,7 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main style="min-height: 900px">
       <br>
       <div class="container">
         @if(Session::has('sm'))
