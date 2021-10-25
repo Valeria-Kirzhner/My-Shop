@@ -16,8 +16,12 @@
             <label for="title" class="form-label">Title:</label>
             <input name="mtitle" type="text"  value="{{ old('title')}}" class="form-control" placeholder="title" id="title" aria-describedby="title">
         </div>
+        <div class="mb-3">
+          <label for="url" class="form-label">Url:</label>
+          <input name="url" type="text"  value="{{ old('url')}}" class="form-control" placeholder="url" id="url" aria-describedby="url">
+      </div>
         <a href="{{ url('cms/menu')}}" class="btn btn-secondary">Cancel</a>
-          <input class="btn btn-primary " type="submit" name="submit" value="Save" id="">
+          <input class="btn btn-primary " type="submit" name="submit" value="Save">
     </form>
     </div>
   </div>
