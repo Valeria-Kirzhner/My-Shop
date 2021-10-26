@@ -17,7 +17,7 @@ class MenuRequest extends FormRequest
         return [
             'link' => 'required',
             'mtitle' => 'required',
-            'url' => 'required|unique:menus,url|regex:/^[a-z\d-]+^/',
+            'url' => 'required|unique:menus,url|regex:/^[a-z\d-]+$/',
 
         ];
     }
