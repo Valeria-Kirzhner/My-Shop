@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\MenuRequest;
 
 class MenuController extends MainController
 {
@@ -17,9 +18,9 @@ class MenuController extends MainController
         return view('cms.add_menu', self::$data);
     }
 
-    public function store(Request $request)
+    public function store(MenuRequest $request)
     {
-        echo __METHOD__;
+        
     }
 
 
