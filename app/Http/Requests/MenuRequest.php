@@ -21,4 +21,10 @@ class MenuRequest extends FormRequest
 
         ];
     }
+        public function messages()// laravel function
+    {
+        return [
+            'mtitle.required' => 'The title field is required.',
+        ];
+    }
 }
