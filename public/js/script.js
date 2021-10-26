@@ -1,3 +1,11 @@
+String.prototype.permalink = function () {
+    return this.toString().trim().toLocaleLowerCase().replace(/\s/g, "-");
+};
+
+$(".origin-text").on("focusout", function () {
+    $(".target-text").val($(this).val().permalink());
+});
+
 $("div.sm-box").delay(3000).slideUp();
 
 $(".add-to-cart-btn").click(function () {

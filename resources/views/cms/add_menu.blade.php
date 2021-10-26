@@ -10,7 +10,7 @@
         {{csrf_field()}}
         <div class="mb-3">
             <label for="link" class="form-label">Link:</label>
-            <input name="link" value="{{ old('link')}}" type="text" class="form-control" id="link" aria-describedby="link" placeholder="link">
+            <input name="link" value="{{ old('link')}}" type="text" class="form-control origin-text" id="link" aria-describedby="link" placeholder="link">
         </div>
           <div class="mb-3">
             <label for="title" class="form-label">Title:</label>
@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3">
           <label for="url" class="form-label">Url:</label>
-          <input name="url" type="text"  value="{{ old('url')}}" class="form-control" placeholder="url" id="url" aria-describedby="url">
+          <input name="url" type="text"  value="{{ old('url')}}" class="form-control target-text" placeholder="url" id="url" aria-describedby="url">
       </div>
         <a href="{{ url('cms/menu')}}" class="btn btn-secondary">Cancel</a>
           <input class="btn btn-primary " type="submit" name="submit" value="Save">
