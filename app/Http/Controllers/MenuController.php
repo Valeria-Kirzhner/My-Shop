@@ -19,7 +19,7 @@ class MenuController extends MainController
 
     public function store(Request $request)
     {
-        
+        echo __METHOD__;
     }
 
 

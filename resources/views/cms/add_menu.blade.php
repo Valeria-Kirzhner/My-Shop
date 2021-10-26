@@ -6,7 +6,7 @@
 <br><br>
   <div class="row">
     <div class="col-lg-8">
-      <form action="" method="POST">
+      <form action="{{ url('cms/menu')}}" method="POST">
         {{csrf_field()}}
         <div class="mb-3">
             <label for="link" class="form-label">Link:</label>
