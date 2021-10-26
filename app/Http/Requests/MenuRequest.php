@@ -25,6 +25,7 @@ class MenuRequest extends FormRequest
     {
         return [
             'mtitle.required' => 'The title field is required.',
+            
         ];
     }
 }
