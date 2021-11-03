@@ -2,10 +2,13 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Menu extends Model
 {
-    use HasFactory;
+    static public function save_new($request) {
+        $menu = new self();
+        
+    }
 }

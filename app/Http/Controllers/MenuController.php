@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\MenuRequest;
+use App\Menu;
 
 class MenuController extends MainController
 {
@@ -20,7 +21,8 @@ class MenuController extends MainController
 
     public function store(MenuRequest $request)
     {
-        echo __METHOD__;
+        Menu::save_new($request);
+        return redirect('cms/menu');
     }
 
 
