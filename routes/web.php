@@ -6,6 +6,8 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ContentController;
+
 
 # Shop
 Route::prefix('shop')->group(function() {
