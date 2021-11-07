@@ -40,7 +40,8 @@ class MenuController extends MainController
 
     public function update(MenuRequest $request, $id)
     {
-        
+        Menu::update_item($request, $id);
+        return redirect('cms/menu');
     }
 
     public function destroy($id)

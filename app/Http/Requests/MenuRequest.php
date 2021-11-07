@@ -20,7 +20,7 @@ class MenuRequest extends FormRequest
         return [
             'link' => 'required',
             'mtitle' => 'required',
-            'url' => 'required|unique:menus,url|regex:/^[a-z\d-]+$/' . $unique,
+            'url' => 'required|regex:/^[a-z\d-]+$/|unique:menus,url' . $unique,
 
         ];
     }

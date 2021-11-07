@@ -16,4 +16,12 @@ class Menu extends Model
         Session::flash('sm', 'Menu has been saved');
 
     }
+    static public function update_item($request, $id){
+        $menu = self::find($id);
+        $menu->link = $request['link'];
+        $menu->mtitle = $request['mtitle'];
+        $menu->url = $request['url'];
+        $menu->save();
+        Session::flash('sm', 'Menu has been updated');
+    }
 }

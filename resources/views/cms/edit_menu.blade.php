@@ -6,7 +6,7 @@
 <br><br>
   <div class="row">
     <div class="col-lg-8">
-      <form action="{{url('cms/menu' . $menu['id'])}}" method="POST">
+      <form action="{{url('cms/menu/' . $menu['id'])}}" method="POST">
         {{csrf_field()}}
         {{method_field('PUT')}}
         <input type="hidden" name="item_id" value={{ $menu['id']}} >
