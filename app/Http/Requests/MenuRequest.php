@@ -15,7 +15,8 @@ class MenuRequest extends FormRequest
 
     public function rules(Request $request)
     {
-        $unique = !empty($request['item_id']) ? ',' . $request['item_id'] : '';
+        
+        $unique = !empty($request['item_id']) ? ',' . $request['item_id'] : '';// becouse url need to be unique
 
         return [
             'link' => 'required',
