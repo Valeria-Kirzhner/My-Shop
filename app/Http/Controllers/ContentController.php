@@ -32,7 +32,7 @@ class ContentController extends MainController
     public function show($id)
     {
         self::$data['id'] = $id;
-        return view('cms.delete_menu', self::$data);
+        return view('cms.delete_content', self::$data);
     }
 
     public function edit($id)//get current menu info from db and fill the fields.
@@ -49,9 +49,9 @@ class ContentController extends MainController
 
     public function destroy($id)
     {
-        Menu::destroy($id);
-        Session::flash('sm', 'Menu has been deleted');
-        return redirect('cms/menu');
+        Content::destroy($id);
+        Session::flash('sm', 'Content has been deleted');
+        return redirect('cms/content');
 
     }
 }
