@@ -22,7 +22,7 @@
               <td>{{ $item['link']}}</td>
               <td>{{ $item['updated_at']}}</td>
               <td>
-                <a href="#">Edit</a> | 
+                <a href="{{ url('cms/menu/' . $item['id'] . '/edit')}}">Edit</a> | 
                 <a href="{{ url('cms/menu/' . $item['id']) }}">Delete</a>
               </td>
             </tr>

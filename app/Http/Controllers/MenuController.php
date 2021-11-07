@@ -26,18 +26,19 @@ class MenuController extends MainController
         return redirect('cms/menu');
     }
 
-
     public function show($id)
     {
         self::$data['id'] = $id;
         return view('cms.delete_menu', self::$data);
     }
 
-    public function edit($id)
+    public function edit($id)//get current menu info from db and fill the fields.
     {
+        self::$data['menu'] = Menu::find($id)->toArray();
+        return view('cms.edit_menu', self::$data);
     }
 
-    public function update(Request $request, $id)
+    public function update(MenuRequest $request, $id)
     {
         
     }
