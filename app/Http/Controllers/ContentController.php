@@ -20,7 +20,7 @@ class ContentController extends MainController
 
     public function create()
     {
-        return view('cms.add_menu', self::$data);
+        return view('cms.add_content', self::$data);
     }
 
     public function store(MenuRequest $request)
