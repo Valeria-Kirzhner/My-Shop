@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\MenuRequest;
+use App\Http\Requests\ContentRequest;
 use App\Menu;
 use App\Content;
 
@@ -23,10 +23,10 @@ class ContentController extends MainController
         return view('cms.add_content', self::$data);
     }
 
-    public function store(MenuRequest $request)
+    public function store(ContentRequest $request)
     {
-        Menu::save_new($request);
-        return redirect('cms/menu');
+        Content::save_new($request);
+        return redirect('cms/content');
     }
 
     public function show($id)
@@ -37,8 +37,8 @@ class ContentController extends MainController
 
     public function edit($id)//get current menu info from db and fill the fields.
     {
-        self::$data['menu'] = Menu::find($id)->toArray();
-        return view('cms.edit_menu', self::$data);
+        self::$data['content'] = Content::find($id)->toArray();
+        return view('cms.edit_content', self::$data);
     }
 
     public function update(MenuRequest $request, $id)

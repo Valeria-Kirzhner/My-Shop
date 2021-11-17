@@ -144,7 +144,9 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
   $(document).ready(function() {
-  $('#article').summernote();
+  $('#article').summernote({
+    height: 250
+  });
 });
 </script>
 </body>

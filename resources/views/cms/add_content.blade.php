@@ -8,22 +8,22 @@
     <div class="col-lg-8">
       <form action="{{ url('cms/content')}}" method="POST">
         {{csrf_field()}}
-        <div class="mb-3">
-          <label for="menu-link" class="form-label">Menu Link:</label>
-          <select name="menu_id" class="form-control" id="menu-link">
-          <option value="">Choose menu link</option>
-          @foreach ($menu as $item)
-              <option value="{{$item['id']}}">{{$item['link']}}</option>
-          @endforeach
-        </select>
+          <div class="mb-3">
+            <label for="menu-link" class="form-label">Menu Link:</label>
+            <select name="menu_id" class="form-control" id="menu-link">
+              <option value="">Choose menu link</option>
+                @foreach ($menu as $item)
+                    <option @if( old('menu_id') == $item['id']) @endif selected="selected" value="{{$item['id']}}">{{$item['link']}}</option>
+                @endforeach
+            </select>
         </div>
           <div class="mb-3">
             <label for="title" class="form-label">Title:</label>
-            <input name="mtitle" type="text"  value="{{ old('title')}}" class="form-control" placeholder="title" id="title" aria-describedby="title">
+            <input name="title" type="text"  value="{{ old('title')}}" class="form-control" placeholder="title" id="title" aria-describedby="title">
           </div>
           <div class="mb-3">
               <label for="article" class="form-label">Article:</label>
-              <textarea  id="article" class="form-control" id="article" rows="3">{{ old('article')}}</textarea>
+              <textarea id="article" name="article" class="form-control" id="article" rows="3">{{ old('article')}}</textarea>
           </div>
         <a href="{{ url('cms/content')}}" class="btn btn-secondary">Cancel</a>
           <input class="btn btn-primary " type="submit" name="submit" value="Save">
