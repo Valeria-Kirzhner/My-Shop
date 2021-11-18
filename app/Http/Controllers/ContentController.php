@@ -41,10 +41,10 @@ class ContentController extends MainController
         return view('cms.edit_content', self::$data);
     }
 
-    public function update(MenuRequest $request, $id)
+    public function update(ContentRequest $request, $id)
     {
-        Menu::update_item($request, $id);
-        return redirect('cms/menu');
+        Content::update_item($request, $id);
+        return redirect('cms/content');
     }
 
     public function destroy($id)
