@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\CategoriesController;
+
 
 
 # Shop
