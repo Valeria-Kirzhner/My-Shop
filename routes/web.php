@@ -28,8 +28,7 @@ Route::middleware(['cmsadmin'])->group(function() {
     Route::get('dashboard', [CmsController::class, 'dashboard']); 
     Route::resource('menu', MenuController::class);
     Route::resource('content', ContentController::class);
-
-
+    Route::resource('categories', CategoriesController::class);
     });
 });
 
