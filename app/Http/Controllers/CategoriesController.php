@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\CategorieRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Categorie;
 use App\Content;
 
@@ -23,10 +23,10 @@ class CategoriesController extends MainController
         return view('cms.add_category', self::$data);
     }
 
-    public function store(ContentRequest $request)
+    public function store(CategoryRequest $request)
     {
-        Content::save_new($request);
-        return redirect('cms/content');
+        Categorie::save_new($request);
+        return redirect('cms/categories');
     }
 
     public function show($id)

@@ -10,7 +10,7 @@
         {{csrf_field()}}
           <div class="mb-3">
             <label for="title" class="form-label">Title:</label>
-            <input name="mtitle" type="text"  value="{{ old('title')}}" class="form-control origin-text" placeholder="title" id="title" aria-describedby="title">
+            <input name="title" type="text"  value="{{ old('title')}}" class="form-control origin-text" placeholder="title" id="title" aria-describedby="title">
           </div>
           <div class="mb-3">
             <label for="url" class="form-label">Url:</label>
@@ -22,7 +22,7 @@
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">category image:</label>
-            <input type="file" id="image" name="image" class="form-control"rows="3">{{ old('article')}}
+            <input type="file" id="image" name="image" class="form-control" rows="3">
           </div>
           <a href="{{ url('cms/categories')}}" class="btn btn-secondary">Cancel</a>
           <input class="btn btn-primary " type="submit" name="submit" value="Save">
