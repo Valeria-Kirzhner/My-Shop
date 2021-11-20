@@ -26,9 +26,7 @@ class Categorie extends Model
             $img->resize(300, null, function($constraint){
                 $constraint->aspectRatio();// to keep width relative to the height. 
             });
-            $img->save(public_path() . '/images/' . 'w-'. $image_name);// the w is to mark that this is the new one.
-            unlink(public_path() . '/images/' . $image_name);
-            $image_name = 'w-'. $image_name;
+            $img->save(public_path() . '/images/' . $image_name);// the w is to mark that this is the new one.
         }
         $category = new self();
         $category->title = $request['title'];
