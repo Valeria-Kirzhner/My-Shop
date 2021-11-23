@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Image, Session;
 
@@ -14,8 +13,35 @@ class Categorie extends Model
     }
     static public function save_new($request){
          
-        $image_name = 'default.png';
+        $img = self::loadImage($request);
+        $image_name = $img ? $img : 'default.png';
 
+        $category = new self();
+        $category->title = $request['title'];
+        $category->article = $request['article'];
+        $category->url = $request['url'];
+        $category->image = $image_name;
+        $category->save();
+        Session::flash('sm', 'Category has been saved');
+    }
+
+    static public function update_item($request, $id){
+
+        $image_name = self::loadImage($request);// if no photo was chousen this will be the varieble
+        $category = self::find($id);
+        $category->title = $request['title'];
+        $category->article = $request['article'];
+        $category->url = $request['url'];
+        if($image_name){// if it's not = '' - means that some photo was chousen
+            $category->image = $image_name;
+
+        }
+        $category->save();
+        Session::flash('sm', 'Category has been saved');
+    }
+    
+    static private function loadImage($request){// this for increase duplication of code
+        $image_name = '';// if no photo was chousen this will be the varieble
         if ($request->hasFile('image') && $request->file('image')->isValid()){
 
             $file = $request->file('image');
@@ -28,14 +54,7 @@ class Categorie extends Model
             });
             $img->save(public_path() . '/images/' . $image_name);// the w is to mark that this is the new one.
         }
-        $category = new self();
-        $category->title = $request['title'];
-        $category->article = $request['article'];
-        $category->url = $request['url'];
-        $category->image = $image_name;
-        $category->save();
-        Session::flash('sm', 'Category has been saved');
+        return $image_name;
     }
-
 }
  

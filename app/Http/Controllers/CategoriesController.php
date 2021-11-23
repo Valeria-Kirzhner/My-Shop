@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Categorie;
-use App\Content;
 
 use Session;
 
@@ -32,26 +30,26 @@ class CategoriesController extends MainController
     public function show($id)
     {
         self::$data['id'] = $id;
-        return view('cms.delete_content', self::$data);
+        return view('cms.delete_category ', self::$data);
     }
 
     public function edit($id)//get current menu info from db and fill the fields.
     {
-        self::$data['content'] = Content::find($id)->toArray();
-        return view('cms.edit_content', self::$data);
+        self::$data['category'] = Categorie::find($id)->toArray();
+        return view('cms.edit_category', self::$data);
     }
 
-    public function update(ContentRequest $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        Content::update_item($request, $id);
-        return redirect('cms/content');
+        Categorie::update_item($request, $id);
+        return redirect('cms/categories');
     }
 
     public function destroy($id)
     {
-        Content::destroy($id);
-        Session::flash('sm', 'Content has been deleted');
-        return redirect('cms/content');
+        Categorie::destroy($id);
+        Session::flash('sm', 'Category has been deleted');
+        return redirect('cms/categories');
 
     }
 }

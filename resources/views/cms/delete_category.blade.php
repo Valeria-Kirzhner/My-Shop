@@ -6,11 +6,11 @@
 <br><br>
   <div class="row">
     <div class="col-lg-8">
-      <form action="{{ url('cms/content/' . $id )}}" method="post">  
+      <form action="{{ url('cms/categories/' . $id )}}" method="post">  
         {{csrf_field()}}
           {{ method_field('DELETE')}}
 
-        <a href="{{ url('cms/content')}}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ url('cms/categories')}}" class="btn btn-secondary">Cancel</a>
           <input class="btn btn-danger " type="submit" name="submit" value="Delete">
     </form>
     </div>
