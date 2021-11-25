@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\ProductRequest;
 use App\Categorie;
 use App\Product;
 
@@ -24,7 +24,7 @@ class ProductsController extends MainController
         return view('cms.add_product', self::$data);
     }
 
-    public function store(CategoryRequest $request)
+    public function store(ProductRequest $request)
     {
         Categorie::save_new($request);
         return redirect('cms/categories');

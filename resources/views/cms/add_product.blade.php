@@ -6,7 +6,7 @@
 <br><br>
   <div class="row">
     <div class="col-lg-8">
-      <form action="{{ url('cms/categories')}}" method="POST" enctype="multipart/form-data">
+      <form action="{{ url('cms/products')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="mb-3">
           <label for="categorie-id" class="form-label">Category:</label>
