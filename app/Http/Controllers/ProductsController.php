@@ -26,14 +26,14 @@ class ProductsController extends MainController
 
     public function store(ProductRequest $request)
     {
-        Categorie::save_new($request);
-        return redirect('cms/categories');
+        Product::save_new($request);
+        return redirect('cms/products');
     }
 
     public function show($id)
     {
         self::$data['id'] = $id;
-        return view('cms.delete_category ', self::$data);
+        return view('cms.delete_product ', self::$data);
     }
 
     public function edit($id)//get current menu info from db and fill the fields.
@@ -50,9 +50,9 @@ class ProductsController extends MainController
 
     public function destroy($id)
     {
-        Categorie::destroy($id);
-        Session::flash('sm', 'Category has been deleted');
-        return redirect('cms/categories');
+        Product::destroy($id);
+        Session::flash('sm', 'Product has been deleted');
+        return redirect('cms/products');
 
     }
 }

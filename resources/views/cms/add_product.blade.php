@@ -27,7 +27,7 @@
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">Price:</label>
-            <input name="price" type="text"  value="{{ old('price')}}" class="form-control target-text" placeholder="price" id="price" aria-describedby="price">
+            <input name="price" type="text"  value="{{ old('price')}}" class="form-control " placeholder="price" id="price" aria-describedby="price">
           </div>
           <div class="mb-3">
               <label for="article" class="form-label">Article:</label>
