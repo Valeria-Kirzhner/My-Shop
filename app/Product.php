@@ -87,18 +87,19 @@ class Product extends Model
     }
 
     static public function update_item($request, $id){
-
         $image_name = self::loadImage($request);// if no photo was chousen this will be the varieble
-        $category = self::find($id);
-        $category->title = $request['title'];
-        $category->article = $request['article'];
-        $category->url = $request['url'];
-        if($image_name){// if it's not = '' - means that some photo was chousen
-            $category->image = $image_name;
-
+        
+        $product = self::find($id);
+        $product->categorie_id = $request['categorie_id'];
+        $product->title = $request['title'];
+        $product->url = $request['url'];
+        $product->price = $request['price'];
+        $product->article = $request['article'];
+       if( $image_name ){
+            $product->image = $image_name;
         }
-        $category->save();
-        Session::flash('sm', 'Category has been saved');
+        $product->save();
+        Session::flash('sm', 'Product has been updated');
     }
     
     static private function loadImage($request){// this for increase duplication of code

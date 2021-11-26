@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Http\Requests\ProductRequest;
 use App\Categorie;
 use App\Product;
@@ -38,14 +39,15 @@ class ProductsController extends MainController
 
     public function edit($id)//get current menu info from db and fill the fields.
     {
-        self::$data['category'] = Categorie::find($id)->toArray();
-        return view('cms.edit_category', self::$data);
+        self::$data['categories'] = Categorie::all()->toArray();
+        self::$data['product'] = Product::find($id)->toArray();
+        return view('cms.edit_product', self::$data);
     }
 
     public function update(CategoryRequest $request, $id)
-    {
-        Categorie::update_item($request, $id);
-        return redirect('cms/categories');
+    {   
+        Product::update_item($request, $id);
+        return redirect('cms/products');
     }
 
     public function destroy($id)
