@@ -30,6 +30,7 @@ Route::prefix('shop')->group(function() {
 Route::middleware(['cmsadmin'])->group(function() {
     Route::prefix('cms')->group(function() {
     Route::get('dashboard', [CmsController::class, 'dashboard']); 
+    Route::get('orders', [CmsController::class, 'orders']); 
     Route::resource('menu', MenuController::class);
     Route::resource('content', ContentController::class);
     Route::resource('categories', CategoriesController::class);
