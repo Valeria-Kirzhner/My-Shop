@@ -3,10 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Session;
 
 class Content extends Model
 {
+
+    protected $casts = [
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'datetime:d-m-Y H:00',
+    ];
+
     static public function save_new($request){
 
         $content = new self();

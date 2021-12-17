@@ -12,6 +12,7 @@ class ContentController extends MainController
     public function index()
     {
         self::$data['content'] = Content::all()->toArray();
+        
         return view('cms.content', self::$data);
     }
 

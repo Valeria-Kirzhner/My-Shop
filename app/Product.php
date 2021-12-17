@@ -8,6 +8,10 @@ use Cart, Session, Image;
 
 class Product extends Model
 {
+    protected $casts = [
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'datetime:d-m-Y H:00',
+    ];
 
     static public function getProduct($cat_url, &$data){
 

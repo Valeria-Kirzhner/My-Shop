@@ -7,6 +7,7 @@ use Session, Cart, DB;
 
 class Order extends Model
 {
+    
     static public function save_new(){
          $cartCollection = Cart::getContent();
          $cart = $cartCollection->toArray();

@@ -7,6 +7,10 @@ use Session;
 
 class Menu extends Model
 {
+    protected $casts = [
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'datetime:d-m-Y H:00',
+    ];
     static public function save_new($request) {
         $menu = new self();
         $menu->link = $request['link'];
