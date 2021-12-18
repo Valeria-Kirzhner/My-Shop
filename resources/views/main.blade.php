@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script> var BASE_URL= "{{ url('')}}";</script>
-<body>
+<body style="height:100vh;">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -44,7 +44,7 @@
               </li> 
               @else
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('user/profile') }}">{{Session::get('user_name')}}</a>
+                <h6 class="nav-link active" aria-current="page" href="{{url('user/profile') }}">{{Session::get('user_name')}}</h6>
               </li>
               @if(Session::has('is_admin'))
               <li class="nav-item">
@@ -60,7 +60,7 @@
         </div>
       </nav>
     </header>
-    <main style="min-height: 900px">
+    <main style="min-height:90%;">
       <br>
       <div class="container">
         @if(Session::has('sm'))

@@ -80,7 +80,7 @@
         </div>
       </nav>
   
-      <main style="min-height: 900px" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-3">
+      <main style="height:100vh;" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-3">
         
         @if(Session::has('sm'))
         <div class="row sm-box">
