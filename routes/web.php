@@ -49,7 +49,7 @@ Route::prefix('user')->group(function() {
 });
 
 # Pages
-Route::get('/', [PagesController::class, 'home']);
+Route::get('/', [ShopController::class, 'categories']);
 Route::get('{url}', [PagesController::class, 'content']);
 
 
